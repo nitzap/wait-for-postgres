@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    build: .
+    depends_on:
+      - "db"
+    command: ["./wait-for-it.sh", "db", "--", "python", "app.py"]
+  db:
+    image: postgres:alpine
