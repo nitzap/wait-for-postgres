@@ -7,3 +7,5 @@ services:
     command: ["./wait-for-it.sh", "db", "--", "python", "app.py"]
   db:
     image: postgres:alpine
+    ports: 
+    - 5432:5432
